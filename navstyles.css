@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;700&display=swap');
+
+/*
+ * AUTHOR: toydotgame
+ * CREATED ON: 2023-04-20
+ * Main styles.
+ */
+
+ul {
+	list-style-type: none;
+	overflow: hidden;
+	box-sizing: border-box;
+	border-bottom: 1px solid #ccc;
+	box-shadow: 0 2px 5px #00000060;
+}
+
+li {
+	display: inline;
+	float: left;
+}
+
+li:hover {
+	background-color: #eee;
+}
+
+a {
+	display: block;
+	padding: 16px;
+	text-align: center;
+	font-family: "Raleway", sans-serif;
+	text-decoration: none;
+	font-weight: bold;
+	color: #333;
+}
+
+.usr {
+	float: right;
+	padding: 32px;
+	background-color: #333;
+	color: #eee;
+}
