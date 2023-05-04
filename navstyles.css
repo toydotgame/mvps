@@ -6,6 +6,16 @@
  * Main styles.
  */
 
+:root {
+	--text-color: #333;
+	--hover-color: #eee;
+}
+
+@font-face {
+	font-family: "Bold Dragon";
+	src: url("media/bold-dragon.ttf");
+}
+
 ul {
 	list-style-type: none;
 	overflow: hidden;
@@ -20,7 +30,7 @@ li {
 }
 
 li:hover {
-	background-color: #eee;
+	background-color: var(--hover-color);
 }
 
 a {
@@ -33,9 +43,19 @@ a {
 	color: #333;
 }
 
+#homebutton > * {
+	padding: 10px;
+	font-family: "Bold Dragon", sans-serif;
+	font-size: 21pt;
+	font-weight: 200;
+}
+
+#homebutton:hover {
+	background-color: var(--bg-color);
+}
+
 .usr {
 	float: right;
-	padding: 32px;
-	background-color: #333;
-	color: #eee;
+	background-color: var(--text-color);
+	color: #fff;
 }
