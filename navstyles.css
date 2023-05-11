@@ -7,8 +7,9 @@
  */
 
 :root {
-	--text-color: #333;
-	--hover-color: #eee;
+	--text-color: #eee;
+	--hover-color: #333;
+	--accent-color: #34cc33;
 }
 
 @font-face {
@@ -16,12 +17,16 @@
 	src: url("media/bold-dragon.ttf");
 }
 
+html {
+	background-color: #1e1e1e;
+}
+
 ul {
 	list-style-type: none;
 	overflow: hidden;
 	box-sizing: border-box;
-	border-bottom: 1px solid #ccc;
-	box-shadow: 0 2px 5px #00000060;
+	border-bottom: 1px solid #333;
+	height: 100vh;
 }
 
 li {
@@ -35,19 +40,22 @@ li:hover {
 
 a {
 	display: block;
-	padding: 16px;
+	padding: 18px;
 	text-align: center;
 	font-family: "Raleway", sans-serif;
 	text-decoration: none;
 	font-weight: bold;
-	color: #333;
+	font-size: 16pt;
+	color: var(--text-color);
 }
 
 #homebutton > * {
 	padding: 10px;
 	font-family: "Bold Dragon", sans-serif;
-	font-size: 21pt;
+	font-size: 14pt;
 	font-weight: 200;
+	text-align: left;
+	color: var(--accent-color);
 }
 
 #homebutton:hover {
@@ -56,6 +64,15 @@ a {
 
 .usr {
 	float: right;
-	background-color: var(--text-color);
-	color: #fff;
+	background-color: var(--accent-color);
+	margin: 10px;
+}
+
+.usr > a {
+	padding: 9px 18px;
+	color: var(--bg-color);
+}
+
+.usr > a:hover {
+	color: var(--text-color)
 }
