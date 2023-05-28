@@ -1,14 +1,180 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;500;700&display=swap');
+
+@font-face {
+	font-family: "Bold Dragon";
+	src: url("media/bold-dragon.ttf");
+}
 
 h1 {
 	font-family: "Raleway", sans-serif;
-	font-weight: 200;
+	font-weight: 700;
+}
+
+h2, html {
+	font-family: "Raleway", sans-serif;
+	font-weight: 500;
 }
 
 html {
 	background-color: #1c1c1c;
+	color: #eee;
 }
 
 iframe {
 	box-shadow: 0 2px 5px #00000060;
+}
+
+#landing {
+	height: 20%;
+	padding: 100px;
+	text-align: center;
+	background-image: url("media/images/landing.png");
+	background-size: 100%;
+	user-select: none;
+}
+
+#storelanding {
+	height: 20%;
+	padding: 100px;
+	text-align: center;
+	background-image: url("media/images/store.jpg");
+	background-size: 100%;
+	user-select: none;
+}
+
+#landing > h1, #storelanding > h1 {
+	font-family: "Bold Dragon", sans-serif;
+	font-size: 40px;
+	background: linear-gradient(to right, #548ce3 0%, #34cc33 80%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+#landing > h2, #storelanding > h2 {
+	color: #ccc;
+}
+
+#hpcontent {
+	padding: 50px 250px;
+	text-align: justify;
+}
+
+#hpcontent > img {
+	float: right;
+	display: inline;
+	margin: 0 0 20px 20px;
+}
+
+#hpcontent > iframe {
+	float: right;
+	display: inline;
+	margin: 0 0 20px 20px;
+}
+
+#hpstorelink {
+	text-align: center;
+	margin: auto;
+	width: 200px;
+	border: 1px solid #555;
+	border-radius: 50px;
+	background: linear-gradient(to right, #548ce3 0%, #34cc33 80%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+#hpstorelink > a {
+	text-decoration: none;
+}
+
+hr {
+	margin: 20px;
+	border: 1.5px solid #555;
+	border-radius: 50px;
+}
+
+#storecontent {
+	padding: 50px 150px;
+	text-align: justify;
+}
+
+/* RESPONSIVE STORE CSS ELEMENTS IDK WHAT TO CALL IT BUT KEEP THIS ALL GOOD CODE BC JS WILL BE INTERACTING TY */
+
+#storecontent { /* Grid container */
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-gap: 20px;
+}
+
+.storeproduct {
+	padding: 10px;
+	box-sizing: border-box;
+	width: 200px;
+	height: 250px;
+	background-color: #333;
+	border: 1px solid #555;
+	border-radius: 10px;
+}
+
+.storeproduct > img {
+	width: 180px;
+	height: 180px;
+	background-size: cover;
+	border-radius: 5px;
+}
+
+footer {
+	position: fixed;
+	margin-top: 50px;
+	width: 100%;
+	background-color: #333;
+	left: 0;
+	bottom: 0;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 3px;
+}
+
+main {
+	margin-bottom: 100px; /* idk */
+}
+
+#productimg {
+	box-sizing: border-box;
+	margin: 50px;
+		margin-right: 0;
+	float: left;
+	width: 40%;
+	height: auto;
+	background-size: cover;
+	border-radius: 50px;
+}
+
+#productinfo {
+	box-sizing: border-box;
+	padding: 50px;
+		padding-left: 0;
+	float: right;
+	width: 50%;
+}
+
+#productdesc{
+	text-align: left;
+}
+
+#productinfo > hr {
+	margin: 20px 0;
+}
+
+#cartbtn {
+	margin-top: 50px;
+	border: 2px solid #48e047;
+	border-radius: 50px;
+	background-color: #34cc33;
+	width: 300px;
+	height: 80px;
+	color: #1c1c1c;
+	font-family: "Raleway", sans-serif;
+	font-weight: 700;
+	font-size: 30px;
+	cursor: pointer;
 }

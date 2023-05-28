@@ -3,13 +3,14 @@
 /*
  * AUTHOR: toydotgame
  * CREATED ON: 2023-04-20
- * Main styles.
+ * Navbar styles.
  */
 
 :root {
 	--text-color: #eee;
 	--hover-color: #333;
 	--accent-color: #34cc33;
+	--bg-color: #1c1c1c;
 }
 
 @font-face {
@@ -19,6 +20,7 @@
 
 html {
 	background-color: #1e1e1e;
+	user-select: none;
 }
 
 ul {
@@ -50,11 +52,11 @@ a {
 }
 
 #homebutton > * {
-	padding: 10px;
+	/*padding: 10px;*/
 	font-family: "Bold Dragon", sans-serif;
-	font-size: 14pt;
+	font-size: 18pt;
 	font-weight: 200;
-	text-align: left;
+	text-align: center;
 	color: var(--accent-color);
 }
 
