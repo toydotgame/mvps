@@ -37,6 +37,13 @@
 					}
 					function OnBlur(e) {
 						OverwriteCart(e.target.id, e.target.value);
+						window.location.reload(); // This sucks.
+					}
+					window.DeleteItemFromCart=(id) => { // icky globally attached thing
+						if(confirm("Are you sure you would like to remove this item from your cart?") == true) {
+							OverwriteCart(id, 0);
+							window.location.reload();
+						}
 					}
 				</script>
 				<?php
@@ -51,11 +58,13 @@
 					}
 
 					// Retrieve cart cookie
-					if(!isset($_COOKIE["cart"])) {
+					if(!isset($_COOKIE["cart"]) || $_COOKIE["cart"] == "[]") {
 						die('<h1 align="center" style="font-size:50px;"><br><br>Cart is empty.</h1><h2 align="center">Head to the <a href="/browse.php" style="text-decoration:none; font-weight:bold; color:#34cc33;">store</a> to see<br>our latest products!</h2>');
 					}
 					$cart = json_decode($_COOKIE["cart"]);
 
+					echo '<h1>Cart</h1>'
+					   . '<br>';
 					for($i = 0; $i < count($cart); $i++) {
 						// $cart[$i][0] = ID
 						// $cart[$i][1] = Count
@@ -64,6 +73,7 @@
 							while($row = $result->fetch_assoc()) { // for() iterate over each row of table.
 								echo '<div class="cartitem">'
 									   . '<img src="' . $row["image"] . '" />'
+									   . '<img class="cartbin" src="/media/bin.svg" onclick="DeleteItemFromCart(' . $cart[$i][0] . ')" />'
 									   . '<input class="cartqty" placeholder="Qty." value="' . $cart[$i][1] . '" type="number" onKeyPress="if(this.value.length==3) return false;" min="0" max="999" id="' . $cart[$i][0] . '"></input>' // Element ID set to product ID for simplicity of pulling ID value from JS.
 									   . '<h1><a href="product.php?id=' . $row["id"] . '">' . $row["name"] . '</a></h1><br>'
 									   . '<p>$' . number_format($row["price"] * $cart[$i][1], 2) . ' ($' . number_format($row["price"], 2) . ' ea.)</p>'
@@ -76,8 +86,11 @@
 					echo '<hr style="width:100%; border-radius:0; margin:0; border:2px solid #555; border-style:solid none none none;">';
 				?>
 			</div>
-			<code>// TODO: customisible OverrideCart() qty boxes, remove button, names, etc
-				<br>also gotta do right pane with order total, logged in user and shipping address (greyed out form for logged in user rn), and checkout button
+			<div id="cartsidebar">
+				<h1>Check Out</h1>
+				<p>Lorem ipsum dolor sit amet.</p>
+			</div>
+			<code>also gotta do right pane with order total, logged in user and shipping address (greyed out form for logged in user rn), and checkout button
 			</code>
         </main>
         <footer style="line-height:8px">&copy; 2023 a126<br><small style="font-size:6px;">By using a126, you consent to the use of cookies being used for site functionality.</small></footer>
