@@ -30,7 +30,7 @@
         </header>
         <main>
 			<script type="module">
-				import { AddToCart } from "./globalcartman.js";
+				import { AddToCart } from "./cartman.js";
 				document.getElementById("cartbtn").addEventListener("click", OnClick);
 				function OnClick() {
 					AddToCart(1);

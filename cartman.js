@@ -7,6 +7,8 @@
  * purchase.
  */
 
+import { GetCookie } from "/global.js";
+
 var cart = [];
 if(GetCookie("cart") != null) { // Retrieve cart info from cookie if cookie exists.
 	cart = JSON.parse(GetCookie("cart"));
@@ -53,10 +55,4 @@ export function OverwriteCart(id, count) { // Assumes cart object already exists
 	}
 	cart[cartindex][1] = parseInt(count); // In cart and count is non-zero? Overwrite count.
 	document.cookie = "cart=" + JSON.stringify(cart);
-}
-
-function GetCookie(name) { // Stolen tehe
-	const value = `; ${document.cookie}`;
-	const parts = value.split(`; ${name}=`);
-	if (parts.length === 2) return parts.pop().split(';').shift();
 }
