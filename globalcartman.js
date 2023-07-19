@@ -36,15 +36,23 @@ export function AddToCart(count) {
 }
 
 export function OverwriteCart(id, count) { // Assumes cart object already exists, as it cannot create a new cart entry.
+	/*console.log("OverwriteCart() run:\n"
+		+ "id: " + id + "\n"
+		+ "count: " + count + "\n"
+		+ "cartindex: " + IndexOf2D(cart, id) + "\n"
+		+ "cart: " + JSON.stringify(cart) 
+	);*/
 	var cartindex = IndexOf2D(cart, id);
 	if(cartindex == -1) { // Not in cart? Break.
 		return;
 	}
 	if(count == 0) { // In cart but new count is 0? Remove it from the cart.
 		cart.splice(cartindex, 1);
+		document.cookie = "cart=" + JSON.stringify(cart);
 		return;
 	}
-	cart[cartindex][1] = count; // In cart and count is non-zero? Overwrite count.
+	cart[cartindex][1] = parseInt(count); // In cart and count is non-zero? Overwrite count.
+	document.cookie = "cart=" + JSON.stringify(cart);
 }
 
 function GetCookie(name) { // Stolen tehe

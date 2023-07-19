@@ -59,6 +59,6 @@
 				?>
 			</div>
         </main>
-        <footer>&copy; 2023 a126</footer>
+        <footer style="line-height:8px">&copy; 2023 a126<br><small style="font-size:6px;">By using a126, you consent to the use of cookies being used for site functionality.</small></footer>
     </body>
 </html>

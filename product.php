@@ -37,35 +37,38 @@
 				}
 			</script>
 			<?php
-			// DB Connection
-			$servername = "localhost";
-			$username = "root";
-			$password = "";
-			$db = "web_shop";
-			$conn = new mysqli($servername, $username, $password, $db);
-			if($conn->connect_error) { // catch
-				die('<script>console.log("[ERROR] DB connection failure! Trace: ' . $conn->connect_error . '");</script>');
-			}
-
-			// Run query
-			$result = $conn->query("SELECT * FROM inventory WHERE id = '" . $_GET["id"] . "';"); // Get row of DB table where ID = id query string in URL
-			if ($result->num_rows > 0) {
-				while($row = $result->fetch_assoc()) { // for() iterate over each row of table.
-				echo '<img src="' . $row["image"] . '" id="productimg" />'
-				   . '<script>document.title = "' . $row["name"] . ' – a126";</script>'
-				   . '<div id="productinfo">'
-					   . '<h1 id="productname">' . $row["name"] . '</h1>'
-					   . '<h2 id="productprice">$' . $row["price"] . '</h2>'
-					   . '<hr>'
-					   . '<p id="productdesc">' . $row["description"] . '</p>'
-					   . '<button id="cartbtn">Add to Cart</button>'
-				   . '</div>';
+				// DB Connection
+				$servername = "localhost";
+				$username = "root";
+				$password = "";
+				$db = "web_shop";
+				$conn = new mysqli($servername, $username, $password, $db);
+				if($conn->connect_error) { // catch
+					die('<script>console.log("[ERROR] DB connection failure! Trace: ' . $conn->connect_error . '");</script>');
 				}
-			} else {
-				echo '<h1 align="center" style="font-size:50px;"><br><br>Error 404</h1><h2 align="center">Product could not be found!</h2>';
-			}
+				
+				if(!isset($_GET["id"])) {
+					die('<h1 align="center" style="font-size:50px;"><br><br>Error 404</h1><h2 align="center">Product could not be found!</h2>');
+				}
+				// Run query
+				$result = $conn->query("SELECT * FROM inventory WHERE id = '" . $_GET["id"] . "';"); // Get row of DB table where ID = id query string in URL
+				if ($result->num_rows > 0) {
+					while($row = $result->fetch_assoc()) { // for() iterate over each row of table.
+					echo '<img src="' . $row["image"] . '" id="productimg" />'
+					. '<script>document.title = "' . $row["name"] . ' – a126";</script>'
+					. '<div id="productinfo">'
+						. '<h1 id="productname">' . $row["name"] . '</h1>'
+						. '<h2 id="productprice">$' . $row["price"] . '</h2>'
+						. '<hr>'
+						. '<p id="productdesc">' . $row["description"] . '</p>'
+						. '<button id="cartbtn">Add to Cart</button>'
+					. '</div>';
+					}
+				} else {
+					echo '<h1 align="center" style="font-size:50px;"><br><br>Error 404</h1><h2 align="center">Product could not be found!</h2>';
+				}
 			?>
         </main>
-        <footer>&copy; 2023 a126</footer>
+        <footer style="line-height:8px">&copy; 2023 a126<br><small style="font-size:6px;">By using a126, you consent to the use of cookies being used for site functionality.</small></footer>
     </body>
 </html>
