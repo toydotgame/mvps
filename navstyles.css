@@ -68,6 +68,7 @@ a {
 	float: right;
 	background-color: var(--accent-color);
 	margin: 10px;
+	border-radius: 5px;
 }
 
 .usr > a {

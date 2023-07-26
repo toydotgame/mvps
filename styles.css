@@ -243,3 +243,44 @@ main {
 	padding-left: 5px;
 	width: 25px !important;
 }
+
+.loginform {
+	background-color: #1c1c1c;
+	border: none;
+		border-bottom: 2px solid #34cc33;
+	color: #fff;
+	width: 35%;
+	height: 15%;
+	margin: 15px 0;
+	padding: 10px 25px;
+	font-family: "Raleway", sans-serif;
+	font-weight: 500;
+	font-size: 21pt;
+}
+
+.loginform:focus {
+	outline: none;
+}
+
+.loginbtn {
+	background-color: #34cc33;
+	color: #1c1c1c;
+	border: none;
+	border-radius: 7px;
+	width: 30%;
+	padding: 8px;
+	font-family: "Raleway", sans-serif;
+	font-weight: 700;
+	font-size: 20pt;
+	margin-top: 25px;
+}
+
+.loginbtn:hover {
+	background-color: #333;
+	color: #eee;
+}
+
+.loginbtn:disabled {
+	background-color: #222;
+	color: #eee;
+}
