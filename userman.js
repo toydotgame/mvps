@@ -7,7 +7,7 @@
 import { GetCookie } from "/global.js";
 
 var currentUser;
-if(GetCookie("currentUser") != null) { // Retrieve logged in user if exists.
+if(GetCookie("currentUser") != null && GetCookie("currentUser") != "") { // Retrieve logged in user if exists.
 	currentUser = JSON.parse(GetCookie("currentUser"));
 }
 
@@ -21,5 +21,5 @@ export function LogInUser(token) {
 }
 
 export function LogOutUser() {
-
+	document.cookie = "currentUser="; // Will that do it? // It does.
 }

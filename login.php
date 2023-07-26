@@ -3,7 +3,7 @@
 <!--
     AUTHOR: toydotgame
     CREATED ON: 2023-04-20
-    Main landing page for the shop website.
+	User info management forms and login/logout stuff.
 -->
 
 <html>
@@ -68,7 +68,31 @@
 					die('<style>#cartcontent { width:100vw !important; float:none !important; padding: 0; }</style><h1 align="center" style="font-size:50px; width:100% !important; float:none !important;"><br><br><br>Login Failed!</h1><h2 align="center">Incorrect username or password.<br>Head to the <a href="/login.php" style="text-decoration:none; font-weight:bold; color:#34cc33;">log in</a> page to try again.</h2>');
 				}
 			?>
-			
+			<!-- We're assuming that the currentUser cookie is set to the uh,,,,"token".... -->
+			<!-- if not, die -->
+			<script type="module">
+				import { LogOutUser } from "./userman.js";
+				window.LogOutUser = LogOutUser;
+			</script>
+			<?php
+				if(!isset($_COOKIE["currentUser"])) {
+					die("Not logged in");
+				}
+				$currentUser = json_decode($_COOKIE["currentUser"]);
+
+				// im such a silly little sql
+				$conn = new mysqli("localhost", "root", "", "web_shop");
+				if($conn->connect_error) {
+					die('<script>console.log("[ERROR] DB connection failure! Trace: ' . $conn->connect_error . '");</script>');
+				}
+				// teehe
+
+				echo '<a href="/login.php" onclick="LogOutUser()">Log Out</a>';
+				
+				// query stuff go here idk? for the page layout TODO
+				// basically SELECT WHERE password LIKE $currentUser or sumn idk man;;;;;;;;;
+				// there is no else condition and if there is i quit
+			?>
         </main>
         <footer style="line-height:8px">&copy; 2023 a126<br><small style="font-size:6px;">By using a126, you consent to the use of cookies being used for site functionality.</small></footer>
     </body>
