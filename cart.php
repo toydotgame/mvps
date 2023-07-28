@@ -88,10 +88,6 @@
 				?>
 			</div>
 			<div id="cartsidebar">
-				<script type="module">
-					import { LogInUser } from "./userman.js";
-					//LogInUser("5f4dcc3b5aa765d61d8327deb882cf99");
-				</script>
 				<?php
 					// DB Connection
 					$servername = "localhost";
@@ -109,7 +105,20 @@
 						//die('<style>#cartcontent { width:100vw !important; float:none !important; padding: 0; }</style><h1 align="center" style="font-size:50px; width:100% !important; float:none !important;"><br><br>Cart is empty.</h1><h2 align="center">Head to the <a href="/browse.php" style="text-decoration:none; font-weight:bold; color:#34cc33;">store</a> to see<br>our latest products!</h2>');
 						die('<h1>Checkout</h1><p>You are not logged in! Head to the <a href="/login.php">log in</a> page to sign in.</p>');
 					}
-					$currentUser = json_decode($_COOKIE["currentUser"]);
+					$loginToken = $_COOKIE["currentUser"];
+					// Stealing Code
+					// Stealing Code
+					// Stealing Code, Code, Code
+					// Writing what belongs to others puts me in a good mood
+					// Though my friends say that I shouldn't
+					// There is nothing that I wouldn't
+					// Steal Code, Code, Code, Code, Code
+					$delim = ":";
+					$currentUser = "";
+					$index = strrpos($loginToken, $delim);
+					if ($index !== false) {
+						$currentUser = substr($loginToken, $index + strlen($delim));
+					}
 
 					// Get sum of cart totals
 					$total = number_format(0, 2);
@@ -131,23 +140,24 @@
 
 					// Render checkout
 					echo '<h1>Checkout</h1>';
-					echo '<b>Order Total:</b> $' . $total . '<hr>';
+					echo '<b>Order Total:</b> $' . $total . '<hr style="width:100%; border-radius:0; margin:20px 0; border:2px solid #555; border-style:solid none none none;">';
 					$result = $conn->query("SELECT * FROM users WHERE password = '" . $currentUser . "';");
 					if ($result->num_rows == 1) {
 						while($userObj = $result->fetch_assoc()) {
 							echo '<b>Deliver To:</b><br>';
 							echo $userObj["firstname"] . ' ' . $userObj["lastname"] . '<br>'
 							   . $userObj["address"];
-							echo '<hr>';
-							echo '<b>Order status will be sent to:</b> ' . $userObj["email"];
+							echo '<hr style="width:100%; border-radius:0; margin:20px 0; border:2px solid #555; border-style:solid none none none;">';
+							echo '<b>Order status will be sent to:</b> ' . $userObj["email"] . '<br>';
+							echo '<b>Billing:</b> xxxx xxxx xxxx ' . substr($userObj["cc"], -4); // "security"
+							echo '<hr style="width:100%; border-radius:0; margin:20px 0; border:2px solid #555; border-style:solid none none none;">';
+							echo '<div style="margin:0 5px; width:auto; height:40px; border-radius:5px; background-color:#34cc33;"><a style="text-align:center; padding-top:5px; display:block; width:100%; height: 100%; text-decoration:none; color:#1c1c1c; font-size:18pt; font-weight:bold;" href="/checkout.php">Checkout</a></div>';
 						}
 					} else {
 						die('<script>console.log("[ERROR] Failed to retrieve logged in user!");</script>');
 					}
 				?>
 			</div>
-			<code>also gotta do right pane with order total, logged in user and shipping address (greyed out form for logged in user rn), and checkout button
-			</code>
         </main>
         <footer style="line-height:8px">&copy; 2023 a126<br><small style="font-size:6px;">By using a126, you consent to the use of cookies being used for site functionality.</small></footer>
     </body>
