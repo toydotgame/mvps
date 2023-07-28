@@ -56,3 +56,8 @@ export function OverwriteCart(id, count) { // Assumes cart object already exists
 	cart[cartindex][1] = parseInt(count); // In cart and count is non-zero? Overwrite count.
 	document.cookie = "cart=" + JSON.stringify(cart);
 }
+
+export function ClearCart() { // dont use pls
+	console.log("clearing cart!!!");
+	document.cookie = "cart="; // nuclear
+}

@@ -33,7 +33,7 @@
 				<?php
 					// here we go again...
 
-					if(!isset($_COOKIE["cart"]) || $_COOKIE["cart"] == "[]") {
+					if(!isset($_COOKIE["cart"]) || $_COOKIE["cart"] == "[]" || $_COOKIE["cart"] == null) {
 						die("nothing in cart lol go away");
 					}
 					$cart = json_decode($_COOKIE["cart"]);
@@ -54,15 +54,15 @@
 					}
 
 					for($i = 0; $i < count($cart); $i++) {
-						echo "
-						INSERT INTO pending (orderid, productid, quantity, userid)
-						VALUES (" . $orderid . ", " . $cart[$i][0] . ", " . $cart[$i][1] . ", " . $userid . ");
-						";
 						$resultplaceorder = $conn->query("
 							INSERT INTO pending (orderid, productid, quantity, userid)
 							VALUES (" . $orderid . ", " . $cart[$i][0] . ", " . $cart[$i][1] . ", " . $userid . ");
 						");
 						if ($resultplaceorder === TRUE) {
+							echo '<script type="module">
+								import { ClearCart } from "./cartman.js";
+								ClearCart();
+							</script>';
 							// not bothered to rewrite if to make this look nice
 						} else {
 							die('there was an issue checking out, please try again later');
