@@ -59,5 +59,5 @@ export function OverwriteCart(id, count) { // Assumes cart object already exists
 
 export function ClearCart() { // dont use pls
 	console.log("clearing cart!!!");
-	document.cookie = "cart="; // nuclear
+	document.cookie = "cart=[]"; // nuclear
 }

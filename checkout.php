@@ -33,7 +33,7 @@
 				<?php
 					// here we go again...
 
-					if(!isset($_COOKIE["cart"]) || $_COOKIE["cart"] == "[]" || $_COOKIE["cart"] == null) {
+					if(!isset($_COOKIE["cart"]) || $_COOKIE["cart"] == "[]") {
 						die("nothing in cart lol go away");
 					}
 					$cart = json_decode($_COOKIE["cart"]);
