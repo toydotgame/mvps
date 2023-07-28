@@ -2,9 +2,8 @@
 
 <!--
     AUTHOR: toydotgame
-    CREATED ON: 2023-05-28
-	Cart page that pulls product info from the DB
-	and cart info from local cookies.
+    CREATED ON: 2023-07-29
+	Checkout page for lazy chuck cart cookie into db.
 -->
 
 <html>
@@ -31,6 +30,45 @@
         </header>
         <main>
 			<div id="cartcontent">
+				<?php
+					// here we go again...
+
+					if(!isset($_COOKIE["cart"]) || $_COOKIE["cart"] == "[]") {
+						die("nothing in cart lol go away");
+					}
+					$cart = json_decode($_COOKIE["cart"]);
+
+					$conn = new mysqli("localhost", "root", "", "web_shop");
+					if($conn->connect_error) {
+						die('<script>console.log("[ERROR] DB connection failure! Trace: ' . $conn->connect_error . '");</script>');
+					}
+
+					$resultorderid = $conn->query("SELECT MAX(orderid) FROM pending;");
+					while($roworderid = $resultorderid->fetch_assoc()) {
+						$orderid = $roworderid["MAX(orderid)"] + 1;
+					}
+
+					$resultuserid = $conn->query("SELECT * FROM users WHERE email = \"" . strtok($_COOKIE["currentUser"], ":") . "\";");
+					while($rowuserid = $resultuserid->fetch_assoc()) {
+						$userid = $rowuserid["id"];
+					}
+
+					for($i = 0; $i < count($cart); $i++) {
+						echo "
+						INSERT INTO pending (orderid, productid, quantity, userid)
+						VALUES (" . $orderid . ", " . $cart[$i][0] . ", " . $cart[$i][1] . ", " . $userid . ");
+						";
+						$resultplaceorder = $conn->query("
+							INSERT INTO pending (orderid, productid, quantity, userid)
+							VALUES (" . $orderid . ", " . $cart[$i][0] . ", " . $cart[$i][1] . ", " . $userid . ");
+						");
+						if ($resultplaceorder === TRUE) {
+							// not bothered to rewrite if to make this look nice
+						} else {
+							die('there was an issue checking out, please try again later');
+						}
+					}
+				?>
 				<style>#cartcontent { width:100vw !important; float:none !important; padding: 0; }</style>
 				<h1 align="center" style="font-size:50px; width:100% !important; float:none !important;">
 					<br><br><br>
