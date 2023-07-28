@@ -56,7 +56,8 @@
 				if($conn->connect_error) {
 					die('<script>console.log("[ERROR] DB connection failure! Trace: ' . $conn->connect_error . '");</script>');
 				}
-				// teehe
+				// code goes here bc we have cookie current user known to be good and part of the db. (at least im gonna pretend)
+				// just like have an info edit panel here and uh maybe dont show its functionality sure sure	
 
 				echo '<a href="/login.php" onclick="LogOutUser()">Log Out</a>';
 				
