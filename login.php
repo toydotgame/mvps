@@ -57,9 +57,20 @@
 					die('<script>console.log("[ERROR] DB connection failure! Trace: ' . $conn->connect_error . '");</script>');
 				}
 				// code goes here bc we have cookie current user known to be good and part of the db. (at least im gonna pretend)
-				// just like have an info edit panel here and uh maybe dont show its functionality sure sure	
-
-				echo '<a href="/login.php" onclick="LogOutUser()">Log Out</a>';
+				// just like have an info edit panel here and uh maybe dont show its functionality sure sure
+				echo '<div style="margin: 5%;"><h1>Your Info</h1>';
+				$result = $conn->query("SELECT * FROM users WHERE (email, password) = (\"" . $_POST["email"] . "\", \"" . md5($_POST["password"]) . "\");");
+				if ($result->num_rows > 0) {
+					while($usr = $result->fetch_assoc()) {
+						echo '<b>Name:</b> ' . $usr["firstname"] . ' ' . $usr["lastname"] . '<br>';
+						echo '<b>E-Mail:</b> ' . $usr["email"] . '<br>';
+						echo '<b>Address:</b> ' . $usr["address"] . '<br>';
+						echo '<b>Account Created:</b> ' . $usr["registered"] . '<br>';
+						echo '<b>Credit Card Number:</b> ' . $usr["cc"];
+					}
+				}
+				echo '<br><br>';
+				echo '<a style="font-weight:bold; color:#34cc33; font-size:20pt;" href="/login.php" onclick="LogOutUser()">Log Out</a>';
 				
 				// query stuff go here idk? for the page layout TODO
 				// basically SELECT WHERE password LIKE $currentUser or sumn idk man;;;;;;;;;

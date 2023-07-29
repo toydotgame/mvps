@@ -284,3 +284,18 @@ main {
 	background-color: #222;
 	color: #eee;
 }
+
+table {
+	width: 100%;
+	border: 1px solid #fff;
+}
+
+th, td {
+	border: 1px solid #fff;
+	text-align: left;
+	padding: 8px;
+}
+
+th {
+	text-align: center;
+}
