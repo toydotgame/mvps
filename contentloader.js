@@ -7,9 +7,9 @@
 
 import {} from "/imgmodal.js";
 
-document.getElementById("nav").innerHTML = `
-<a href="/"><div>LOGO</div></a>
-<a href=""><div>Plan</div></a>
+document.getElementById("navbar").innerHTML = `
+<a href="/" class="navlogo">LOGO</a>
+<a href="" class="nav">Plan</a>
 `;
 
 var recentblogs = `
