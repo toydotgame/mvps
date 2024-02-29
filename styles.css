@@ -1,6 +1,7 @@
 /*
  * AUTHOR: toydotgame
- * CREATED ON: 2024-01-11
+ * CREATED ON: 2024-02-29
+ * Basically just a slightly modified ICCMC main stylesheet.
  */
 
 /* GENERIC */
@@ -17,25 +18,102 @@ html {
 	min-height: 100vh;
 }
 
-/* NAV */
+body {
+	background-image: linear-gradient(#fff, #6e6fc0);
+		background-attachment: fixed;
+	margin: 0 auto;
+	max-width: 900px;
+}
 
-#navbar {
-	display: block;
-	width: 100%;
-	height: 36px;
+#navbar, #content, #aside {
 	padding: 7px;
 }
 
-.navlogo, .nav {
-	font-size: 14px;
+.card {
+	margin-bottom: 14px;
 	padding: 14px;
-	color: #fff;
-	background-color: #f00;
-	border-radius: 3px;
+	background-image: linear-gradient(#fff, #c5c5df);
+	border: 0.5px solid #ccc;
+		border-radius: 7px;
+}
+
+#content > .card {
+	padding: 14px 24px;
+}
+
+.card:last-child {
+	margin-bottom: 0;
+}
+
+a {
+	color: #444;
 	text-decoration: none;
+	font-weight: bold;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+img {
+	display: inline-block;
+	border-radius: 7px;
+	cursor: pointer;
+}
+
+img:not([width]) {
+	width: 100%;
+}
+
+code {
+	font-family: monospace;
+}
+
+p > code {
+	font-size: 16px;
+}
+
+ul, ol {
+	padding: 0 2em;
+}
+
+/* NAV */
+
+#logo {
+	display: inline;
+	width: auto;
+	height: 24px;
+	border-radius: 0;
+}
+
+#nav {
+	background-image: linear-gradient(#fe9, #fc3);
+	font-size: 20px;
 }
 
 /* CONTENT */
+
+#content {
+	width: 100%;
+	text-align: justify;
+}
+
+#content > div > p {
+	padding-bottom: 14px;
+}
+
+table, th, td {
+	border: 1px solid gray;
+		border-collapse: collapse;
+}
+
+/* ASIDE */
+
+#footer {
+	width: 100%;
+	color: #999;
+	text-align: center;
+}
 
 /* IMG MODAL */
 
@@ -63,6 +141,14 @@ html {
 	object-fit: contain;
 }
 
-/* ASIDE*/
-
 /* RESPONSIVE*/
+
+@media only screen and (max-width: 700px) {
+	#logo {
+		width: 100px;
+	}
+
+	#content, #aside {
+		width: 100%;
+	}
+}
