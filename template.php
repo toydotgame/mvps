@@ -10,11 +10,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="/styles.css">
-		<title>TEMPLATE_TITLE - ICCMC</title>
-		<meta property="og:type" content="article">
-		<meta property="og:site_name" content="ICCMC">
-		<meta property="og:title" content="TEMPLATE_TITLE">
-		<meta property="og:description" content="TEMPLATE_DESC">
+		<title>TEMPLATE_TITLE - Gold Coast City Council</title>
 		<meta name="viewport" content="width=device-width">
 		<script src="/contentloader.js" type="module"></script>
 	</head>
@@ -25,16 +21,37 @@
 			<h2>Heading 2</h2>
 			<h3>Heading 3</h3>
 			<p>Lorem ipsum dolor sit amet. <code>code text</code></p>
-			<small>small</small>
+			<div class="carousel">
+				<div class="carousel-item">
+					<img src="https://placekitten.com/300/300">
+					<h1>Item Title</h1>
+					<p>Description lorem ipsum dolor sit amet</p>
+				</div>
+				<div class="carousel-item">
+					<img src="https://placekitten.com/300/300">
+					<h1>Item Title</h1>
+					<p>Description lorem ipsum dolor sit amet</p>
+				</div>
+				<div class="carousel-item">
+					<img src="https://placekitten.com/300/300">
+					<h1>Item Title</h1>
+					<p>Description lorem ipsum dolor sit amet</p>
+				</div>
+				<div class="carousel-item">
+					<img src="https://placekitten.com/300/300">
+					<h1>Item Title</h1>
+					<p>Description lorem ipsum dolor sit amet</p>
+				</div>
+			</div>
 			<br>
 			<img src="https://placekitten.com/300/300" width="25%">
 			<table>
 				<tr><th>Col 1</th><th>Col 2</th></tr>
-				<tr><td>Title</td><th>Value</th></tr>
-				<tr><td>Title</td><th>Value</th></tr>
-				<tr><td>Title</td><th>Value</th></tr>
-				<tr><td>Title</td><th>Value</th></tr>
-				<tr><td>Title</td><th>Value</th></tr>
+				<tr><td>Title</td><td>Value</td></tr>
+				<tr><td>Title</td><td>Value</td></tr>
+				<tr><td>Title</td><td>Value</td></tr>
+				<tr><td>Title</td><td>Value</td></tr>
+				<tr><td>Title</td><td>Value</td></tr>
 			</table>
 		</div></div>
 		<div id="footer"><p>&copy; 2024 Gold Coast City Council</p></div>
