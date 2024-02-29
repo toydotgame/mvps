@@ -4,8 +4,6 @@
  * ICCMC content loader minus the `aside` element.
  */
 
-import {} from "/imgmodal.js";
-
 document.getElementById("nav").innerHTML = `
 <a href="/"><img id="logo" src="/media/logo.png"></a>
 |

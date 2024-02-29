@@ -132,18 +132,26 @@ td:nth-child(even) {
 	border: 0.5px solid #ccc;
 	border-radius: 7px;
 	padding: 7px;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	white-space: nowrap;
 }
 
 .carousel-item {
 	margin: 0 3.5px;
 	display: inline-block;
 	width: 150px;
-	background-color: #efefef;
+	color: #000;
 	font-size: 11px;
+	overflow: hidden; /* Very short max desc length */
 }
 
 .carousel-item > h1 {
 	font-size: 14px;
+}
+
+.carousel-item > p {
+	font-weight: lighter; /* I have no idea */
 }
 
 /* ASIDE */

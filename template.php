@@ -22,26 +22,56 @@
 			<h3>Heading 3</h3>
 			<p>Lorem ipsum dolor sit amet. <code>code text</code></p>
 			<div class="carousel">
-				<div class="carousel-item">
+				<a href=""><div class="carousel-item">
 					<img src="https://placekitten.com/300/300">
 					<h1>Item Title</h1>
 					<p>Description lorem ipsum dolor sit amet</p>
-				</div>
-				<div class="carousel-item">
+				</div></a>
+				<a href=""><div class="carousel-item">
 					<img src="https://placekitten.com/300/300">
 					<h1>Item Title</h1>
 					<p>Description lorem ipsum dolor sit amet</p>
-				</div>
-				<div class="carousel-item">
+				</div></a>
+				<a href=""><div class="carousel-item">
 					<img src="https://placekitten.com/300/300">
 					<h1>Item Title</h1>
 					<p>Description lorem ipsum dolor sit amet</p>
-				</div>
-				<div class="carousel-item">
+				</div></a>
+				<a href=""><div class="carousel-item">
 					<img src="https://placekitten.com/300/300">
 					<h1>Item Title</h1>
 					<p>Description lorem ipsum dolor sit amet</p>
-				</div>
+				</div></a>
+				<a href=""><div class="carousel-item">
+					<img src="https://placekitten.com/300/300">
+					<h1>Item Title</h1>
+					<p>Description lorem ipsum dolor sit amet</p>
+				</div></a>
+				<a href=""><div class="carousel-item">
+					<img src="https://placekitten.com/300/300">
+					<h1>Item Title</h1>
+					<p>Description lorem ipsum dolor sit amet</p>
+				</div></a>
+				<a href=""><div class="carousel-item">
+					<img src="https://placekitten.com/300/300">
+					<h1>Item Title</h1>
+					<p>Description lorem ipsum dolor sit amet</p>
+				</div></a>
+				<a href=""><div class="carousel-item">
+					<img src="https://placekitten.com/300/300">
+					<h1>Item Title</h1>
+					<p>Description lorem ipsum dolor sit amet</p>
+				</div></a>
+				<a href=""><div class="carousel-item">
+					<img src="https://placekitten.com/300/300">
+					<h1>Item Title</h1>
+					<p>Description lorem ipsum dolor sit amet</p>
+				</div></a>
+				<a href=""><div class="carousel-item">
+					<img src="https://placekitten.com/300/300">
+					<h1>Item Title</h1>
+					<p>Description lorem ipsum dolor sit amet</p>
+				</div></a>
 			</div>
 			<br>
 			<img src="https://placekitten.com/300/300" width="25%">
