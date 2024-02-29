@@ -27,6 +27,7 @@
 					die('<script>console.log("[ERROR] DB connection failure! Trace: ' . $conn->connect_error . '");</script>');
 				}
 				
+				// Insert POST request variables directly into `users`:
 				$result = $conn->query('INSERT INTO users VALUES (NULL, "' . $_POST["name"] . '", "' . $_POST["email"] . '", "' . preg_replace('/\s+/', '', $_POST["phone"]) . '", ' . $_POST["id"] . ');');
 				if($result == 1) {
 					echo ('<h1 style="text-align:center">Submission Successful!</h1>');

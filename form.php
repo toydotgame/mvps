@@ -42,12 +42,13 @@
 						die('<script>console.log("[ERROR] DB connection failure! Trace: ' . $conn->connect_error . '");</script>');
 					}
 					
+					// Get all info for certain event based off of `id` query string
 					$result = $conn->query("SELECT * FROM events WHERE id = " . $_GET["id"] . ";");
 					if ($result->num_rows > 0) {
 						while($row = $result->fetch_assoc()) { // Should only run for 1 row but oh well
 							echo('<tr><th colspan="2">Expression of Interest – ' . $row["title"] . '</th></tr>
 							<tr style="display:none"><td>id</td><td><input type="text" name="id" value="' . $_GET["id"] . '" /><br></td></tr>
-							');
+							'); // Hacky fix to convert the query string into a POST request value.
 						}
 					} else {
 						echo '<script>console.log("[ERROR] Failed to retrieve current events from database! empty set.");</script>';
