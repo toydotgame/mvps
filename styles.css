@@ -58,7 +58,6 @@ a:hover {
 img {
 	display: inline-block;
 	border-radius: 7px;
-	cursor: pointer;
 }
 
 img:not([width]) {
