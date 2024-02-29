@@ -18,77 +18,34 @@
 		<div id="navbar"><div id="nav" class="card"></div></div>
 		<div id="content"><div class="card">
 			<h1>What's On</h1>
-			<p>Come to the Gold Coast! Yippee!!!</p>
+			<p>Some say we like to see ourselves as the main event, but really, we do it all for you! High-energy stage show sound good? How about beach cinema or symphony under the stars? If sport's more your thing, why not check out a NRL or AFL game? Or for lovers of low-key, get into one of the many grassroots arts and food festivals. Check out the latest events on Gold Coast below and Stay & Play for the ultimate getaway!</p>
 			<?php
 				$conn = new mysqli("localhost", "root", "", "gccc");
 				if($conn->connect_error) { // catch
 					die('<script>console.log("[ERROR] DB connection failure! Trace: ' . $conn->connect_error . '");</script>');
 				}
 				
-				// Run query
-				$result = $conn->query("SELECT * FROM events;");
-				if ($result->num_rows > 0) {
-					while($row = $result->fetch_assoc()) {
-					// echo() whatever; $row["colname"] u get it
+				$categories = array("Featured", "Food & Drink", "Entertainment", "Sports", "Arts/Music");
+				for($i = 0; $i <= 4; $i++) {
+					echo ('<h2>' . $categories[$i] . '</h2><div class="carousel">');
+					// Run query
+					$result = $conn->query("SELECT * FROM events WHERE category = " . $i + 1 . ";");
+					if ($result->num_rows > 0) {
+						while($row = $result->fetch_assoc()) {
+							echo('
+								<a href="event?event=' . $row["id"] . '"><div class="carousel-item">
+									<img src="' . $row["img"] . '">
+									<h1>' . $row["title"] . '</h1>
+									<p>' . $row["short_desc"] . '</p>
+								</div></a>
+							');
+						}
+					} else {
+						echo '<script>console.log("[ERROR] Failed to retrieve current events from database! Empty set.");</script>';
 					}
-				} else {
-					echo '<script>console.log("[ERROR] Failed to retrieve current events from database! Empty set.");</script>';
+					echo('</div>');
 				}
 			?>
-			<div class="carousel">
-				<a href=""><div class="carousel-item">
-					<img src="https://placekitten.com/300/300">
-					<h1>Item Title</h1>
-					<p>Description lorem ipsum dolor sit amet</p>
-				</div></a>
-				<a href=""><div class="carousel-item">
-					<img src="https://placekitten.com/300/300">
-					<h1>Item Title</h1>
-					<p>Description lorem ipsum dolor sit amet</p>
-				</div></a>
-				<a href=""><div class="carousel-item">
-					<img src="https://placekitten.com/300/300">
-					<h1>Item Title</h1>
-					<p>Description lorem ipsum dolor sit amet</p>
-				</div></a>
-				<a href=""><div class="carousel-item">
-					<img src="https://placekitten.com/300/300">
-					<h1>Item Title</h1>
-					<p>Description lorem ipsum dolor sit amet</p>
-				</div></a>
-				<a href=""><div class="carousel-item">
-					<img src="https://placekitten.com/300/300">
-					<h1>Item Title</h1>
-					<p>Description lorem ipsum dolor sit amet</p>
-				</div></a>
-				<a href=""><div class="carousel-item">
-					<img src="https://placekitten.com/300/300">
-					<h1>Item Title</h1>
-					<p>Description lorem ipsum dolor sit amet</p>
-				</div></a>
-				<a href=""><div class="carousel-item">
-					<img src="https://placekitten.com/300/300">
-					<h1>Item Title</h1>
-					<p>Description lorem ipsum dolor sit amet</p>
-				</div></a>
-				<a href=""><div class="carousel-item">
-					<img src="https://placekitten.com/300/300">
-					<h1>Item Title</h1>
-					<p>Description lorem ipsum dolor sit amet</p>
-				</div></a>
-				<a href=""><div class="carousel-item">
-					<img src="https://placekitten.com/300/300">
-					<h1>Item Title</h1>
-					<p>Description lorem ipsum dolor sit amet</p>
-				</div></a>
-				<a href=""><div class="carousel-item">
-					<img src="https://placekitten.com/300/300">
-					<h1>Item Title</h1>
-					<p>Description lorem ipsum dolor sit amet</p>
-				</div></a>
-			</div>
-			<br>
-			<img src="https://placekitten.com/300/300" width="25%">
 			<table>
 				<tr><th>Col 1</th><th>Col 2</th></tr>
 				<tr><td>Title</td><td>Value</td></tr>

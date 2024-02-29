@@ -146,6 +146,12 @@ td:nth-child(even) {
 	overflow: hidden; /* Very short max desc length */
 }
 
+.carousel-item > img {
+	width: 150px;
+	height: 150px;
+	object-fit: cover;
+}
+
 .carousel-item > h1 {
 	font-size: 14px;
 }
@@ -158,6 +164,7 @@ td:nth-child(even) {
 
 #footer {
 	width: 100%;
+	margin-bottom: 7px;
 	color: #999;
 	text-shadow: 1px 1px 4px #444;
 	text-align: center;
