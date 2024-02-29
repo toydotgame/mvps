@@ -1,0 +1,206 @@
+/*
+ * AUTHOR: toydotgame
+ * CREATED ON: 2024-02-29
+ * Basically just a slightly modified ICCMC main stylesheet.
+ */
+
+/* GENERIC */
+
+@font-face {
+	font-family: "Black Diamond";
+	src: url("/media/Black Diamond.otf");
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+	word-wrap: break-word;
+}
+
+html {
+	min-height: 100vh;
+}
+
+body {
+	background-image: linear-gradient(#fff, #6e6fc0);
+		background-attachment: fixed;
+	margin: 0 auto;
+	max-width: 900px;
+}
+
+#navbar, #content, #aside {
+	padding: 7px;
+}
+
+.card {
+	margin-bottom: 14px;
+	padding: 14px;
+	background-image: linear-gradient(#fff, #c5c5df);
+	border: 0.5px solid #ccc;
+		border-radius: 7px;
+}
+
+.card::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#content > .card {
+	padding: 14px 24px;
+}
+
+.card:last-child {
+	margin-bottom: 0;
+}
+
+a {
+	color: #222;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+img {
+	display: inline-block;
+	border-radius: 7px;
+}
+
+img:not([width]) {
+	width: 100%;
+}
+
+code {
+	font-family: monospace;
+}
+
+p > code {
+	font-size: 16px;
+}
+
+ul, ol {
+	padding: 0 2em;
+}
+
+/* NAV */
+
+#logo {
+	display: inline;
+	width: auto;
+	height: 24px;
+	border-radius: 0;
+}
+
+#nav {
+	margin-top: 14px;
+	background-image: linear-gradient(#fe9, #fc3);
+	font-size: 20px;
+	text-shadow: 1px 1px 1px #444;
+}
+
+/* CONTENT */
+
+#content {
+	width: 100%;
+	text-align: justify;
+}
+
+#content > div > p {
+	padding-bottom: 14px;
+}
+
+table {
+	width: 100%;
+}
+
+td:nth-child(odd) {
+	text-align: right;
+}
+
+td {
+	padding: 7px;
+}
+
+td[colspan], th[colspan] {
+	font-size: 28px;
+	text-align: center;
+}
+
+.field {
+	background-color: #eee;
+	border: none;
+		border-bottom: 2px solid #00a5a5;
+	color: #444;
+	width: 100%;
+	height: 15%;
+	margin: 15px 0;
+	padding: 10px 25px;
+	font-family: "Raleway", sans-serif;
+	font-weight: 500;
+	font-size: 21pt;
+}
+
+.field:focus {
+	outline: none;
+}
+
+.loginbtn {
+	width: 100%;
+	padding: 8px;
+	font-family: "Raleway", sans-serif;
+	font-weight: 700;
+	font-size: 20pt;
+	margin-top: 25px;
+	border: 1px solid #ccc;
+	color: #fff;
+	text-shadow: 1px 1px 2px #575760;
+	border-radius: 7px;
+	background-image: linear-gradient(#a6a6dd, #8181cf);
+}
+
+.loginbtn:hover {
+	color: #eee;
+	background-image: linear-gradient(#b9b9e4, #9494d6);
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.loginbtn:disabled {
+	background-image: linear-gradient(#999, #777);
+	color: #999;
+	cursor:not-allowed;
+}
+
+.loginbtn:hover:disabled {
+	color: #999;
+	background-image: linear-gradient(#999, #777);
+	text-decoration: none;
+	cursor: not-allowed;
+}
+
+/* ASIDE */
+
+#footer {
+	width: 100%;
+	margin-bottom: 7px;
+	color: #999;
+	text-shadow: 1px 1px 4px #444;
+	text-align: center;
+}
+
+/* RESPONSIVE*/
+
+@media only screen and (max-width: 700px) {
+	#logo {
+		width: 100px;
+	}
+
+	#content, #aside {
+		width: 100%;
+	}
+}

@@ -34,6 +34,7 @@
 							<img src="' . $row["img"] . '">
 							<div id="textcontainer">
 							<h1>' . $row["title"] . '</h1>
+							<script>document.getElementsByTagName("title")[0].innerHTML = "' . $row["title"] . '";</script>
 							<p><b>When:</b> ' . $row["time"] . '</p>
 							<p><b>Where:</b> ' . $row["loc"] . '</p>
 							<br>
