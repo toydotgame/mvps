@@ -90,6 +90,7 @@ ul, ol {
 	background-image: linear-gradient(#fe9, #fc3);
 	font-size: 20px;
 	text-shadow: 1px 1px 1px #444;
+	height: 50px;
 }
 
 /* CONTENT */
@@ -101,31 +102,6 @@ ul, ol {
 
 #content > div > p {
 	padding-bottom: 14px;
-}
-
-table, th, td {
-	color: #fff;
-	border: 1px solid #575760;
-		border-collapse: collapse;
-	padding: 7px;
-	text-shadow: 1px 1px 2px #575760;
-}
-
-tr {
-	background-image: linear-gradient(#8181cf, #5c5cc1);
-}
-
-tr:nth-child(even) {
-	background-image: linear-gradient(#a6a6dd, #8181cf);
-}
-
-th {
-	background-image: linear-gradient(#bbe, #55e);
-}
-
-td:nth-child(even) {
-	font-family: monospace;
-	text-align: right;
 }
 
 .carousel {

@@ -60,10 +60,6 @@ img {
 	border-radius: 7px;
 }
 
-img:not([width]) {
-	width: 100%;
-}
-
 code {
 	font-family: monospace;
 }
@@ -90,6 +86,7 @@ ul, ol {
 	background-image: linear-gradient(#fe9, #fc3);
 	font-size: 20px;
 	text-shadow: 1px 1px 1px #444;
+	height: 50px;
 }
 
 /* CONTENT */
@@ -128,36 +125,12 @@ td:nth-child(even) {
 	text-align: right;
 }
 
-.carousel {
-	border: 0.5px solid #ccc;
-	border-radius: 7px;
-	padding: 7px;
-	overflow-x: scroll;
-	overflow-y: hidden;
-	white-space: nowrap;
-}
-
-.carousel-item {
-	margin: 0 3.5px;
-	display: inline-block;
-	width: 150px;
-	color: #000;
-	font-size: 11px;
-	overflow: hidden; /* Very short max desc length */
-}
-
-.carousel-item > img {
-	width: 150px;
-	height: 150px;
+img {
+	width: 300px;
+	height: 300px;
+	margin-right: 14px;
 	object-fit: cover;
-}
-
-.carousel-item > h1 {
-	font-size: 14px;
-}
-
-.carousel-item > p {
-	font-weight: lighter; /* I have no idea */
+	float: left;
 }
 
 /* ASIDE */

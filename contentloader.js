@@ -5,11 +5,20 @@
  */
 
 document.getElementById("nav").innerHTML = `
-<a href="/"><img id="logo" src="/media/logo.png"></a>
+<div style="float:left;">
+<a href="/"><img id="logo" src="/media/logo.png" style="margin-right:2em"></a>
+<a href="">Plan</a>
 |
-<a href="http://iccmc.toydotgame.net:8123/">Map</a>
+<a href="/">Places to Go</a>
 |
-<a href="/rules">Rules</a>
+<a href="/">Things To Do</a>
 |
-<a href="/about">About</a>
+<a href="/">Events</a>
+|
+<a href="">Deals</a>
+</div><div style="float:right;">
+<a href="">Sign Up</a>
+|
+<a href="">Log In</a>
+</div>
 `;

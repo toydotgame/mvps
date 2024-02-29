@@ -46,14 +46,6 @@
 					echo('</div>');
 				}
 			?>
-			<table>
-				<tr><th>Col 1</th><th>Col 2</th></tr>
-				<tr><td>Title</td><td>Value</td></tr>
-				<tr><td>Title</td><td>Value</td></tr>
-				<tr><td>Title</td><td>Value</td></tr>
-				<tr><td>Title</td><td>Value</td></tr>
-				<tr><td>Title</td><td>Value</td></tr>
-			</table>
 		</div></div>
 		<div id="footer"><p>&copy; 2024 Gold Coast City Council</p></div>
 	</body>
