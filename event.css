@@ -1,0 +1,183 @@
+/*
+ * AUTHOR: toydotgame
+ * CREATED ON: 2024-02-29
+ * Basically just a slightly modified ICCMC main stylesheet.
+ */
+
+/* GENERIC */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+	word-wrap: break-word;
+}
+
+html {
+	min-height: 100vh;
+}
+
+body {
+	background-image: linear-gradient(#fff, #6e6fc0);
+		background-attachment: fixed;
+	margin: 0 auto;
+	max-width: 900px;
+}
+
+#navbar, #content, #aside {
+	padding: 7px;
+}
+
+.card {
+	margin-bottom: 14px;
+	padding: 14px;
+	background-image: linear-gradient(#fff, #c5c5df);
+	border: 0.5px solid #ccc;
+		border-radius: 7px;
+}
+
+#content > .card {
+	padding: 14px 24px;
+}
+
+.card:last-child {
+	margin-bottom: 0;
+}
+
+a {
+	color: #444;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+img {
+	display: inline-block;
+	border-radius: 7px;
+}
+
+img:not([width]) {
+	width: 100%;
+}
+
+code {
+	font-family: monospace;
+}
+
+p > code {
+	font-size: 16px;
+}
+
+ul, ol {
+	padding: 0 2em;
+}
+
+/* NAV */
+
+#logo {
+	display: inline;
+	width: auto;
+	height: 24px;
+	border-radius: 0;
+}
+
+#nav {
+	margin-top: 14px;
+	background-image: linear-gradient(#fe9, #fc3);
+	font-size: 20px;
+	text-shadow: 1px 1px 1px #444;
+}
+
+/* CONTENT */
+
+#content {
+	width: 100%;
+	text-align: justify;
+}
+
+#content > div > p {
+	padding-bottom: 14px;
+}
+
+table, th, td {
+	color: #fff;
+	border: 1px solid #575760;
+		border-collapse: collapse;
+	padding: 7px;
+	text-shadow: 1px 1px 2px #575760;
+}
+
+tr {
+	background-image: linear-gradient(#8181cf, #5c5cc1);
+}
+
+tr:nth-child(even) {
+	background-image: linear-gradient(#a6a6dd, #8181cf);
+}
+
+th {
+	background-image: linear-gradient(#bbe, #55e);
+}
+
+td:nth-child(even) {
+	font-family: monospace;
+	text-align: right;
+}
+
+.carousel {
+	border: 0.5px solid #ccc;
+	border-radius: 7px;
+	padding: 7px;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	white-space: nowrap;
+}
+
+.carousel-item {
+	margin: 0 3.5px;
+	display: inline-block;
+	width: 150px;
+	color: #000;
+	font-size: 11px;
+	overflow: hidden; /* Very short max desc length */
+}
+
+.carousel-item > img {
+	width: 150px;
+	height: 150px;
+	object-fit: cover;
+}
+
+.carousel-item > h1 {
+	font-size: 14px;
+}
+
+.carousel-item > p {
+	font-weight: lighter; /* I have no idea */
+}
+
+/* ASIDE */
+
+#footer {
+	width: 100%;
+	margin-bottom: 7px;
+	color: #999;
+	text-shadow: 1px 1px 4px #444;
+	text-align: center;
+}
+
+/* RESPONSIVE*/
+
+@media only screen and (max-width: 700px) {
+	#logo {
+		width: 100px;
+	}
+
+	#content, #aside {
+		width: 100%;
+	}
+}

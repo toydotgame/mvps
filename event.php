@@ -9,7 +9,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="/whats-on.css">
+		<link rel="stylesheet" href="/event.css">
 		<title>What's On - Gold Coast City Council</title>
 		<meta name="viewport" content="width=device-width">
 		<script src="/contentloader.js" type="module"></script>
@@ -33,7 +33,7 @@
 					if ($result->num_rows > 0) {
 						while($row = $result->fetch_assoc()) {
 							echo('
-								<a href="event?id=' . $row["id"] . '"><div class="carousel-item">
+								<a href="event?event=' . $row["id"] . '"><div class="carousel-item">
 									<img src="' . $row["img"] . '">
 									<h1>' . $row["title"] . '</h1>
 									<p>' . $row["short_desc"] . '</p>
