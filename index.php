@@ -25,11 +25,12 @@
 					die('<script>console.log("[ERROR] DB connection failure! Trace: ' . $conn->connect_error . '");</script>');
 				}
 				
+				// Hardcoded HTML categories that correspond to the array ID numbers in DB (DB index 1-5, PHP index 0-4)
 				$categories = array("Featured", "Food & Drink", "Entertainment", "Sports", "Arts/Music");
 				for($i = 0; $i <= 4; $i++) {
 					echo ('<h2>' . $categories[$i] . '</h2><div class="carousel">');
 					// Run query
-					$result = $conn->query("SELECT * FROM events WHERE category = " . $i + 1 . ";");
+					$result = $conn->query("SELECT * FROM events WHERE category = " . $i + 1 . ";"); // convert PHP for() loop index to DB index
 					if ($result->num_rows > 0) {
 						while($row = $result->fetch_assoc()) {
 							echo('
@@ -38,7 +39,7 @@
 									<h1>' . $row["title"] . '</h1>
 									<p>' . $row["short_desc"] . '</p>
 								</div></a>
-							');
+							'); // Create HTML groups with relevant information about a given event (row)
 						}
 					} else {
 						echo '<script>console.log("[ERROR] Failed to retrieve current events from database! Empty set.");</script>';
