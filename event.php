@@ -32,11 +32,15 @@
 					while($row = $result->fetch_assoc()) { // Should only run for 1 row but oh well
 						echo('
 							<img src="' . $row["img"] . '">
+							<div id="textcontainer">
 							<h1>' . $row["title"] . '</h1>
 							<p><b>When:</b> ' . $row["time"] . '</p>
 							<p><b>Where:</b> ' . $row["loc"] . '</p>
 							<br>
-							<p>' . $row["long_desc"] . '</p>
+							<p>' . $row["long_desc"] . '</p><br>
+							<a href="form?id=' . $_GET["id"] . '"><div id="interestbutton">Interested?<br>Click Here</div></a>
+							<br><br><br><br><br> <!-- very good way to make table display good-er -->
+							</div>
 						');
 					}
 				} else {
