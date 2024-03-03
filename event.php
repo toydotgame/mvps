@@ -55,6 +55,7 @@
 				<tr><td>Wind Speed</td><td>14 km/h</td></tr>
 				<tr><td>Precip. Chance</td><td>0%</td></tr>
 				<tr><td>UV Index</td><td>12</td></tr>
+				<tr><td>Wave Height</td><td>1.1</td></tr>
 			</table>
 		</div></div>
 		<div id="footer"><p>&copy; 2024 Gold Coast City Council</p></div>
