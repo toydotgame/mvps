@@ -173,6 +173,9 @@
 				<tr><td colspan="2"><input class="loginbtn" type="submit" value="Submit" disabled /></td></td>
 			</table></form>
 		</div></div>
-		<div id="footer"><p>&copy; 2024 Gold Coast City Council</p></div>
+		<div id="footer">
+			<p>All rights are reserved by the respective copyright holders of the text and images on this page. Click <a href="https://www.goldcoast.qld.gov.au/disclaimer-and-copyright.html" style="color:#33e">here</a> to see the disclaimer.</p>
+			<p>&copy; 2024 Gold Coast City Council</p>
+		</div>
 	</body>
 </html>

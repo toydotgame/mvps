@@ -48,6 +48,9 @@
 				}
 			?>
 		</div></div>
-		<div id="footer"><p>&copy; 2024 Gold Coast City Council</p></div>
+		<div id="footer">
+		<p>The weather information on this website is sourced from the BOM. Click <a href="https://www.bom.gov.au/other/disclaimer.shtml" style="color:#33e">here</a> to see the disclaimer.</p>	
+		<p>All rights are reserved by the respective copyright holders of the text and images on this page. Click <a href="https://www.goldcoast.qld.gov.au/disclaimer-and-copyright.html" style="color:#33e">here</a> to see the disclaimer.</p>	
+		<p>&copy; 2024 Gold Coast City Council</p></div>
 	</body>
 </html>
