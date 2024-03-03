@@ -30,6 +30,10 @@
 				$result = $conn->query("SELECT * FROM events WHERE id = " . $_GET["id"] . ";");
 				if ($result->num_rows > 0) {
 					while($row = $result->fetch_assoc()) { // Should only run for 1 row but oh well
+						$cost = "Free";
+						if($row["cost"] != null && $row["cost"] > 0) {
+							$cost = "$" . strval($row["cost"]);
+						}
 						echo('
 							<img src="' . $row["img"] . '">
 							<div id="textcontainer">
@@ -37,6 +41,10 @@
 							<script>document.getElementsByTagName("title")[0].innerHTML = "' . $row["title"] . '";</script>
 							<p><b>When:</b> ' . $row["time"] . '</p>
 							<p><b>Where:</b> ' . $row["loc"] . '</p>
+							<p><b>Contact E-Mail:</b> ' . $row["email"] . '</p>
+							<p><b>Contact Phone:</b> ' . $row["phone"] . '</p>
+							<p><b>Link:</b> <a href="' . $row["link"] . '" style="color:#00f">' . $row["title"] . '</a></p>
+							<p><b>Cost:</b> ' . $cost . '</p>
 							<br>
 							<p>' . $row["long_desc"] . '</p><br>
 							<a href="form?id=' . $_GET["id"] . '"><div id="interestbutton">Interested?<br>Click Here</div></a>
@@ -55,7 +63,7 @@
 				<tr><td>Wind Speed</td><td>14 km/h</td></tr>
 				<tr><td>Precip. Chance</td><td>0%</td></tr>
 				<tr><td>UV Index</td><td>12</td></tr>
-				<tr><td>Wave Height</td><td>1.1</td></tr>
+				<tr><td>Wave Height</td><td>1.1 m</td></tr>
 			</table>
 		</div></div>
 		<div id="footer"><p>&copy; 2024 Gold Coast City Council</p></div>
