@@ -56,7 +56,7 @@
 							<script>document.getElementsByTagName("title")[0].innerHTML = "' . $row["title"] . '";</script>
 							<p><b>When:</b> ' . $row["time"] . '</p>
 							<p><b>Where:</b> ' . $row["loc"] . '</p>
-							<p><b>Contact E-Mail:</b> ' . $row["email"] . '</p>
+							<p><b>Contact E-Mail:</b> <a href="mailto:' . $row["email"] . '">' . $row["email"] . '</a></p>
 							<p><b>Contact Phone:</b> ' . $row["phone"] . '</p>
 							<p><b>Link:</b> <a href="' . $row["link"] . '" style="color:#00f">' . $row["title"] . '</a></p>
 							<p><b>Cost:</b> ' . $cost . '</p>
