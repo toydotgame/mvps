@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+/*
+ * AUTHOR: toydotgame
+ * CREATED ON: 2024-05-01
+ * Generic stylesheet I don't even care.
+ */
+
+/* GENERIC */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Ubuntu", sans-serif;
+	word-wrap: break-word;
+}
+
+html {
+	min-height: 100vh;
+}
+
+body {
+	color: #fff;
+	background-color: #1c1c1c;
+	padding: 14px;
+}
+
+/* NAV */
+
+#nav {
+	width: 100%;
+	display: inline-block;
+	border-radius: 7px;
+	background-color: #333;
+	margin-bottom: 14px;
+}
+
+.navitem, .navitemr {
+	color: #fff;
+	text-decoration: none;
+	padding: 14px;
+}
+
+.navitem:nth-child(1) {
+	border-radius: 7px 0 0 7px;
+} .navitemr:nth-last-child(1) { /* This number has to be equal to the number of .navitemr objects */
+	border-radius: 0 7px 7px 0;
+}
+
+.navitem:hover, .navitemr:hover {
+	color: #1c1c1c;
+	background-color: #bbb;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.navitem {
+	float: left;
+} .navitemr {
+	float: right;
+}
+
+/* CONTENT */
+
+#content {
+	padding: 14px;
+	border-radius: 7px;
+	background-color: #333;
+	text-align: justify;
+}
+
+/* LOGIN PAGE */
+
+table {
+	table-layout: fixed;
+	width: 100%;
+}
+
+td:nth-child(1) {
+	text-align: right;
+}
+
+td:has(.loginbtn) {
+	text-align: center;
+}
+
+td {
+	padding: 7px;
+}
+
+.loginbtn {
+	border-radius: 7px;
+	padding: 3px;
+	color: #fff;
+	background-color: #1c1c1c;
+	border: none;
+	cursor: pointer;
+}
+
+.loginbtn:disabled {
+	color: #333;
+	cursor: not-allowed;
+}

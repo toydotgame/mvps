@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /media
+Allow: /media/*.png
+Allow: /media/*.jpg
+Disallow: /template
