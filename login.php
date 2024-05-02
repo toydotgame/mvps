@@ -33,10 +33,10 @@
 			<?php
 				/* LOGIC FLOW:
 				 * POST login type
-				 *     Create new user page
+				 *     [DONE] Create new user page
 				 *     [DONE] Login failed, user/pass incorrect
 				 *     [DONE] Success (redir to user.php with the user id logged in)
-				 *     Create new user success/fail
+				 *     [DONE] Create new user success/fail
 				 */
 
 				$requestType = "login";
