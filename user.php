@@ -16,6 +16,11 @@
 	<body>
 		<div id="nav"></div>
 		<div id="content">
+			<script type="module">
+				import { LogInUser } from "/cookieman.js";
+
+				LogInUser(window.location.search.substr(1).split("=")[1]);
+			</script>
 			<?php
 				if(!isset($_GET["id"])) die('<h1 style="text-align:center">Please <a href="/login">login</a> first!</h1>');
 
@@ -27,6 +32,8 @@
 				$result = $conn->query('SELECT * FROM users WHERE id = ' . $_GET["id"] . ';');
 				if($result->num_rows > 0) {
 					while($row = $result->fetch_assoc()) {
+						$conn->query('INSERT INTO chat (message, user) VALUES ("User ' . $row["username"] . ' has logged in.", 1);');
+
 						echo("Username: " . $row["username"] . "<br>");
 						echo("Password: " . $row["password"] . "<br>");
 						if($row["type"] == 1) {

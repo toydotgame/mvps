@@ -102,3 +102,86 @@ td {
 	color: #333;
 	cursor: not-allowed;
 }
+
+#chatcontainer {
+	width: 100%;
+	max-width: 800px;
+	height: 600px;
+	background-color: #1c1c1c;
+	border-radius: 24px;
+	margin: 0 auto;
+	padding: 14px;
+	position:relative;
+}
+
+#chatinput {
+	max-width: 772px;
+	width: calc(100% - 152px);
+	left: 76px;
+	border-radius: 999px;
+	background-color: #333;
+	height: 48px;
+	position:absolute;
+	bottom: 14px;
+	display:block;
+	border: unset;
+	padding: 14px;
+	color: #fff;
+}
+
+#chatfile {
+	display: none;
+}
+
+#chatsend {
+	width: 48px;
+	height: 48px;
+	position:absolute;
+	bottom: 14px;
+	right: 14px;
+	display:block;
+	border-radius: 999px;
+	color: #fff;
+	background-color: #333;
+	border:unset;
+	font-size: 22px;
+	text-align:center;
+	vertical-align: middle;
+	cursor:pointer;
+}
+
+#chatupload {
+	width: 48px;
+	height: 48px;
+	position:absolute;
+	bottom: 14px;
+	left: 14px;
+	display:block;
+	border-radius: 999px;
+	color: #fff;
+	background-color: #333;
+	border:unset;
+	font-size: 22px;
+	text-align:center;
+	vertical-align: middle;
+	cursor:pointer;
+}
+
+#chatmessages {
+	overflow-y: scroll;
+	height: calc(100% - 76px);
+}
+
+.chatmessage {
+	margin-bottom: 14px;
+	cursor:default;
+}
+
+.chatimage {
+	margin-left: 48px;
+	border-radius: 7px;
+	max-width: 75%;
+	max-height: 75%;
+	min-width: 48px;
+	min-height: 48px;
+}

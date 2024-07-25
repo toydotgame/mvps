@@ -44,7 +44,7 @@
 				if(isset($_GET["email"]) || isset($_GET["username"]) && isset($_GET["password"])) $requestType = "createValidate";
 				if(isset($_POST["username"]) && isset($_POST["password"])) $requestType = "loginValidate";
 				if(isset($_GET["create"])) $requestType = "create";
-				echo("Request Type: " . $requestType . "<br>");
+				//echo("Request Type: " . $requestType . "<br>");
 
 				$conn = new mysqli("localhost", "root", "", "schoolies");
 				if($conn->connect_error) {
