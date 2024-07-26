@@ -185,3 +185,23 @@ td {
 	min-width: 48px;
 	min-height: 48px;
 }
+
+#emergencycont {
+	background-color: #1c1c1c;
+	border-radius: 14px;
+	width: 30vw;
+	height: 30vw;
+	margin: 0 auto;
+	padding: 0 22px;
+	vertical-align: middle;
+}
+
+#middlecont {
+	display: inline-block;
+	margin: calc(30vw - 245px) 0;
+	text-align: center;
+}
+
+#slider {
+	width: 100%;
+}

@@ -33,20 +33,34 @@
 				if($result->num_rows > 0) {
 					while($row = $result->fetch_assoc()) {
 						$conn->query('INSERT INTO chat (message, user) VALUES ("User ' . $row["username"] . ' has logged in.", 1);');
+						
+						if($row["type"] != 1) { //Normal user						
+							echo('<h1 style="text-align:center">Welcome, ' . $row["username"] . '. Login successful, you will be redirected in 5 seconds.</h1>
+							<p style="text-align:center"><a href="/">Impatient?</a></p>');
+							echo('<script>// sleep time expects milliseconds
+							function sleep (time) {
+							return new Promise((resolve) => setTimeout(resolve, time));
+							}
 
-						echo("Username: " . $row["username"] . "<br>");
-						echo("Password: " . $row["password"] . "<br>");
-						if($row["type"] == 1) {
-							echo("User is an administrator" . "<br>");
+							// Usage!
+							sleep(5000).then(() => {
+								window.location.href = "/";
+							});</script>');
 						} else {
-							echo("User is a general user" . "<br>");
+							echo 'Welcome, admin!';
+							echo '<ul style="margin-left:4em">
+							<li><a href>Chat</a></li>
+							<li><a href>Maps</a></li>
+							<li><a href>Emergency Button</a></li>
+							</ul><br>';
+							echo '<h1>User management page</h1>
+								<table>
+								<tr><td>Username</td><td><input></td></tr>
+								<tr><td>E-Mail</td><td><input></td></tr>
+								<tr><td>Password</td><td><input type="password"></td></tr>
+								<tr><td colspan="2"><button style="margin:0 auto">Submit</button></td></tr>
+								</table>';
 						}
-						if($row["email"] == null) {
-							echo("E-Mail: None" . "<br>");
-						} else {
-							echo("E-Mail: " . $row["email"] . "<br>");
-						}
-						echo("ID: " . $_GET["id"] . "<br>");
 					}
 				}
 			?>

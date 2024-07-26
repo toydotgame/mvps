@@ -17,7 +17,23 @@
 		<div id="nav"></div>
 		<div id="content">
 			<h1>Very Cool Website</h1>
-			<p>I'm not quite sure what it's meant to do as of right now…</p>
+			<?php
+				$conn = new mysqli("localhost", "root", "", "schoolies");
+				if($conn->connect_error) {
+					die('<script>console.log("[ERROR] DB connection failure! Trace: ' . $conn->connect_error . '");</script>');
+				}
+
+				if(isset($_COOKIE["currentUser"])) { // 
+					$result = $conn->query('SELECT * FROM users WHERE id = ' . $_COOKIE["currentUser"] . ';');
+					if($result->num_rows > 0) {
+						while($row = $result->fetch_assoc()) {
+							echo('<p>Welome, ' . $row["username"] . '. Head over to the <a href="/chat">chat</a> or <a href="/map">Maps</a> pages to communicate with your friends!</p>');
+						}
+					}
+				} else {
+					echo('<p>Please <a href="/login">log in</a> in order to use the site!</p>');
+				}
+			?>
 		</div>
 	</body>
 </html>
